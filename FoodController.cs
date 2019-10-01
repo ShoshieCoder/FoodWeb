@@ -47,8 +47,8 @@ namespace FoodWeb.Controllers
         [HttpGet]
         public HttpResponseMessage GetByName(string name)
         {
-            List<Food> foods = f.GetAllFoodsByName(name);
-            return Request.CreateResponse(HttpStatusCode.OK, foods);
+            List<Food> food = f.GetAllFoodsByName(name);
+            return Request.CreateResponse(HttpStatusCode.OK, food);
         }
 
         [Route("api/foods/bymincal/{mincalories}")]

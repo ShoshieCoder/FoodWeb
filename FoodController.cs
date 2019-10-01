@@ -61,7 +61,7 @@ namespace FoodWeb.Controllers
 
         [Route("api/foods/search")]
         [HttpGet]
-        public HttpResponseMessage GetByFilter(string name, int maxcal, int mincal, string ingridients, int grade)
+        public HttpResponseMessage GetBySearch(string name, int maxcal, int mincal, string ingridients, int grade)
         {
             List<Food> foods = f.GetByFilter(name, mincal, maxcal, ingridients, grade);
             return Request.CreateResponse(HttpStatusCode.OK, foods);

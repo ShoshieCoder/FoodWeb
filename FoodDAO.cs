@@ -35,17 +35,17 @@ namespace FoodWeb
 
         public Food UpdateFood(int id, Food food)
         {
-            Food foodForUpdate = new Food();
+            Food Update = new Food();
             using (FoodDBEntities foodEntites = new FoodDBEntities())
             {
-                foodForUpdate = foodEntites.Foods.FirstOrDefault(f => f.ID == id);
-                foodForUpdate.Name = food.Name;
-                foodForUpdate.Calories = food.Calories;
-                foodForUpdate.Ingridients = food.Ingridients;
-                foodForUpdate.Grade = food.Grade;
+                Update = foodEntites.Foods.FirstOrDefault(f => f.ID == id);
+                Update.Name = food.Name;
+                Update.Calories = food.Calories;
+                Update.Ingridients = food.Ingridients;
+                Update.Grade = food.Grade;
                 foodEntites.SaveChanges();
             }
-            return foodForUpdate;
+            return Update;
         }
 
         public Food DeleteFood(int id)
@@ -60,7 +60,7 @@ namespace FoodWeb
             return Delete;
         }
 
-        public List<Food> GetAllFoodsByName(string name)
+        public List<Food> GetFoodsByName(string name)
         {
             using (FoodDBEntities foodEntites = new FoodDBEntities())
             {
@@ -68,7 +68,7 @@ namespace FoodWeb
             }
         }
 
-        public List<Food> GetAllFoodsByMinCalories(int Calories)
+        public List<Food> GetFoodsByMinCalories(int Calories)
         {
             using (FoodDBEntities foodEntites = new FoodDBEntities())
             {

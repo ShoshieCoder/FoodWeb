@@ -50,14 +50,14 @@ namespace FoodWeb
 
         public Food DeleteFood(int id)
         {
-            Food foodForRemove;
+            Food Delete;
             using (FoodDBEntities foodEntites = new FoodDBEntities())
             {
-                foodForRemove = foodEntites.Foods.FirstOrDefault(f => f.ID == id);
-                foodEntites.Foods.Remove(foodForRemove);
+                Delete = foodEntites.Foods.FirstOrDefault(f => f.ID == id);
+                foodEntites.Foods.Remove(Delete);
                 foodEntites.SaveChanges();
             }
-            return foodForRemove;
+            return Delete;
         }
 
         public List<Food> GetAllFoodsByName(string name)

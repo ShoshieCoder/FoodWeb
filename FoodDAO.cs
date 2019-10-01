@@ -76,7 +76,7 @@ namespace FoodWeb
             }
         }
 
-        public List<Food> GetByFilter(string name, int maxcal, int mincal, string ingridients, int grade)
+        public List<Food> GetBySearch(string name, int maxcal, int mincal, string ingridients, int grade)
         {
             using (FoodDBEntities foodDBEntities = new FoodDBEntities())
             {

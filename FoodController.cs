@@ -47,7 +47,7 @@ namespace FoodWeb.Controllers
         [HttpGet]
         public HttpResponseMessage GetByName(string name)
         {
-            List<Food> food = f.GetAllFoodsByName(name);
+            List<Food> food = f.GetFoodsByName(name);
             return Request.CreateResponse(HttpStatusCode.OK, food);
         }
 
@@ -55,7 +55,7 @@ namespace FoodWeb.Controllers
         [HttpGet]
         public HttpResponseMessage GetByMinCalories(int mincalories)
         {
-            List<Food> foods = f.GetAllFoodsByMinCalories(mincalories);
+            List<Food> foods = f.GetFoodsByMinCalories(mincalories);
             return Request.CreateResponse(HttpStatusCode.OK, foods);
         }
 
@@ -63,7 +63,7 @@ namespace FoodWeb.Controllers
         [HttpGet]
         public HttpResponseMessage GetBySearch(string name, int maxcal, int mincal, string ingridients, int grade)
         {
-            List<Food> foods = f.GetByFilter(name, mincal, maxcal, ingridients, grade);
+            List<Food> foods = f.GetBySearch(name, mincal, maxcal, ingridients, grade);
             return Request.CreateResponse(HttpStatusCode.OK, foods);
         }
     }
